@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ExpenseTracker</title>
+</head>
+<body class="bg-orange-0 ">
+    <header class="bg-purple-400 flex items-center justify-between sticky">
+        <div class="flex items-center gap-1">
+            <a class="bg-blue-200 mx-3 my-2
+             rounded-full w-11 h-11
+             flex items-center justify-center
+             border-2 border-blue-400 shadow-md">S</a>
+            <a class="text-xl font-bold text-gray-50 ">HI Siva</a>
+        </div>
+        <div class="flex items-center">
+        <div class="flex font-semibold gap-5 p-4 text-gray-100 hidden md:flex">
+            <a class="hover:text-orange-300 cursor-pointer">Home</a>
+            <a class="hover:text-orange-300 cursor-pointer">About</a>
+            <a class="hover:text-orange-300 cursor-pointer">Info</a>
+            <a class="hover:text-orange-300 cursor-pointer">Transactions</a>
+        </div>
+        <div class="flex md:hidden"><img src="./hamburger-menu-icon-svg-download-png-12787067.webp" class="h-11 w-11 cursor-pointer shadow-lg mx-4 my-2" /></div>
+        </div>
+    </header>
+    <div class="grid grid-cols-1 lg:grid-cols-3">
+    <section class="lg:col-span-2 text-center my-[45px] justify-items-center px-4">
+  <div class="w-full sm:w-4/5 md:w-3/4 lg:w-4/5 rounded-[60px] flex flex-col justify-between
+  bg-gradient-to-r from-[#6A5AE0] via-[#9D50BB] to-[#F78CA0]
+  p-4 sm:p-6 min-h-[280px] shadow-xl text-white">
+    <div class="flex flex-row justify-around items-center gap-4">
+      <div>
+        <div class="text-lg sm:text-2xl">Total Balance--</div>
+        <div class="text-3xl sm:text-[50px] font-semibold italic">$25,027</div>
+      </div>
+
+      <div class="font-semibold cursor-pointer hover:-translate-y-1 transition text-sm sm:text-lg">
+        More Options →
+      </div>
+    </div>
+    <div class="flex flex-row items-center justify-around gap-4 sm:gap-6 mt-6">
+      <div class=" p-4 rounded-2xl flex-row cursor-pointer hover:scale-105 transition">
+        <div class="text-lg sm:text-2xl">Income-</div>
+        <div class="text-2xl sm:text-[35px] font-semibold italic">$67,676</div>
+      </div>
+      <div class=" p-4 rounded-2xl flex-row cursor-pointer hover:scale-105 transition">
+        <div class="text-lg sm:text-2xl">Expense-</div>
+        <div class="text-2xl sm:text-[35px] font-semibold italic">$42,649</div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section>
+        <div class="flex lg:flex-col justify-around lg:gap-4 items-center  m-[70px]">
+            <div class="bg-purple-500 font-semibold text-lg text-gray-100 cursor-pointer hover:bg-purple-600 p-9 border-2 border-blue-700 rounded-3xl">Add Income</div>
+            <div class="bg-purple-500 font-semibold text-lg text-gray-100 cursor-pointer hover:bg-purple-600 p-9 border-2 border-blue-700 rounded-3xl">Add Expense</div>
+        </div>
+    </section>
+    </div>
+    <section>
+        <h class="font-bold text-2xl rounded-xl flex items-center justify-center">Expense Analysis</h>
+        <div class="lg:flex gap-[10px] text-gray-700 justify-between ">
+            <div class="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md lg:w-1/3 h-1/1 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                <div class="relative mx-4 mt-4 flex flex-col gap-4 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none md:flex-row md:items-center">
+                    <div>
+                    <h class="block font-sans text-xl font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+                        Your Expenses
+                    </h>
+                    <p class="block max-w-sm font-sans text-lg font-normal leading-normal text-gray-700 antialiased">
+                        Your monthly Expenses Chart
+                    </p>
+                    </div>
+                </div>
+                <div class="pt-6 px-2 pb-5">
+                    <div id="line-chart"></div>
+                </div>
+                <div class="flex justify-center pb-10 items-center text-xl font-semibold">Line-Chart for monthly Expenses</div>
+                </div>
+                
+                <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+                <script>
+                const chartConfig = {
+                series: [
+                    {
+                    name: "Expenses",
+                    data: [ 45900, 39067, 50050, 38042, 52200, 47230, 42649],
+                    },
+                ],
+                chart: {
+                    type: "line",
+                    height: 360,
+                    toolbar: {
+                    show: false,
+                    },
+                redrawOnWindowResize: true,
+                redrawOnParentResize: true
+                },
+                title: {
+                    show: "Monthly-Expenses",
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                colors: ["#BF40BF"],
+                stroke: {
+                    lineCap: "round",
+                    curve: "smooth",
+                },
+                markers: {
+                    size: 0,
+                },
+                xaxis: {
+                    axisTicks: {
+                    show: false,
+                    },
+                    axisBorder: {
+                    show: false,
+                    },
+                    labels: {
+                    style: {
+                        colors: "#BF40BF",
+                        fontSize: "16px",
+                        fontFamily: "inherit",
+                        fontWeight: 600,
+                    },
+                    },
+                    categories: [
+                    "Oct",
+                    "Nov",
+                    "Dec",
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    ],
+                },
+                yaxis: {
+                    labels: {
+                    style: {
+                        colors: "#BF40BF",
+                        fontSize: "14px",
+                        fontFamily: "inherit",
+                        fontWeight: 500,
+                    },
+                    },
+                },
+                grid: {
+                    show: true,
+                    borderColor: "#BF40BF",
+                    strokeDashArray: 5,
+                    xaxis: {
+                    lines: {
+                        show: true,
+                    },
+                    },
+                    padding: {
+                    top: 5,
+                    right: 20,
+                    },
+                },
+                fill: {
+                    opacity: 0.8,
+                },
+                tooltip: {
+                    theme: "dark",
+                },
+                };
+                
+                // const chart = new ApexCharts(document.querySelector("#line-chart"), chartConfig);
+                
+                // chart.render();
+                </script>
+
+            <div class="relative flex flex-col lg:w-1/3 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                <div class="relative mx-4 mt-4 flex flex-col gap-4 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none md:flex-row md:items-center">
+                    <div>
+                    <h class="block font-sans text-xl font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+                        Pie Chart 
+                    </h>
+                    <p class="block max-w-sm font-sans text-lg font-normal leading-normal text-gray-700 antialiased">
+                        Pie chart on the type of expenses made...
+                    </p>
+                    </div>
+                </div>
+                <div class="py-6 mt-4 grid place-items-center px-2">
+                    <div id="pie-chart"></div>
+                </div>
+                <div class="flex justify-center pb-10 items-center text-xl font-semibold">Pie-Chart for type of expenses made on monthly basis</div>
+                </div>
+                <script>
+                const chartConfig2 = {
+                series: [28, 30, 7, 20, 15],
+                labels: ["Food", "Rent", "Investments", "Health-care", "Other-Expenses"],
+                chart: {
+                    type: "pie",
+                    width: 340,
+                    height: 340,
+                    toolbar: {
+                    show: false,
+                    },
+                redrawOnWindowResize: true,
+                redrawOnParentResize: true
+                },
+                title: {
+                    show: "Type of expenses",
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                colors: ["#BF40BF", "#ff8f00", "#00D1C0", "#1e88e5", "#FF5CA8"],
+                legend: {
+                    show: false,
+                },
+                };
+                
+                // const chart2 = new ApexCharts(document.querySelector("#pie-chart"), chartConfig2);
+                
+                // chart2.render();
+                document.addEventListener("DOMContentLoaded", function () {
+
+                    const chart = new ApexCharts(
+                        document.querySelector("#line-chart"),
+                        chartConfig
+                    );
+                    chart.render();
+
+                    const chart2 = new ApexCharts(
+                        document.querySelector("#pie-chart"),
+                        chartConfig2
+                    );
+                    chart2.render();
+
+                    });
+                </script>
+
+            
+<div class="lg:w-1/3 w-full h-auto  bg-neutral-primary-soft border border-default rounded-lg shadow-lg p-4 md:p-6">
+  <div class="flex justify-between border-light border-b pb-3">
+    <dl>
+      <dt class="text-body">Savings</dt>
+      <dd class="text-2xl font-semibold text-heading">$5,405</dd>
+    </dl>
+    <div>
+      <span class="inline-flex items-center bg-success-soft border border-success-subtle text-fg-success-strong text-xs font-medium px-1.5 py-0.5 rounded">
+        <svg class="w-4 h-4 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/></svg>
+        Profit rate 27.5%
+      </span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 py-3">
+    <dl>
+      <dt class="text-body">Income</dt>
+      <dd class="text-lg font-semibold text-fg-success">$7,676</dd>
+    </dl>
+    <dl>
+      <dt class="text-body">Expense</dt>
+      <dd class="text-lg font-semibold text-fg-danger">-$2,649</dd>
+    </dl>
+  </div>
+
+  <div id="bar-chart"></div>
+    
+  <div class="grid grid-cols-1 items-center border-light border-t justify-between">
+    <div class="flex justify-between items-center pt-4 md:pt-6">
+      <button id="dropdownLastDays3Button" data-dropdown-toggle="LastDays3dropdown" data-dropdown-placement="bottom" class="text-sm font-medium text-body hover:text-heading text-center inline-flex items-center" type="button">
+          Last 7 days
+          <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+      </button>
+      <div id="LastDays3dropdown" class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+          <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownLastDays3Button">
+            <li>
+              <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Yesterday</a>
+            </li>
+            <li>
+              <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Today</a>
+            </li>
+            <li>
+              <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Last 7 days</a>
+            </li>
+            <li>
+              <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Last 30 days</a>
+            </li>
+          </ul>
+      </div>
+      <a href="#" class="inline-flex items-center text-fg-brand bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
+        Expense Report
+        <svg class="w-4 h-4 ms-1.5 -me-0.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+      </a>
+    </div>
+  </div>
+<div id="bar-chart"> </div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"></script>
+<script>
+    
+const options = {
+  series: [
+    {
+      name: "Income",
+      color: "#00D1C0",
+      data: ["5420", "7620", "9820", "9420", "8650", "2120"],
+    },
+    {
+      name: "Expense",
+      data: ["3788", "5810", "7866", "7788", "6100", "1200"],
+      color: "#BF40BF",
+    }
+  ],
+  chart: {
+    sparkline: {
+      enabled: false,
+    },
+    type: "bar",
+    width: "100%",
+    height: 400,
+    toolbar: {
+      show: false,
+    }
+  },
+  fill: {
+    opacity: 1,
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      columnWidth: "100%",
+      borderRadiusApplication: "end",
+      borderRadius: 6,
+      dataLabels: {
+        position: "top",
+      },
+    },
+  },
+  legend: {
+    show: true,
+    position: "bottom",
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  tooltip: {
+    shared: true,
+    intersect: false,
+    formatter: function (value) {
+      return "$" + value
+    }
+  },
+  xaxis: {
+    labels: {
+      show: true,
+      style: {
+        fontFamily: "Inter, sans-serif",
+        cssClass: 'text-md font-normal fill-body'
+      },
+      formatter: function(value) {
+        return "$" + value
+      }
+    },
+    categories: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"],
+    axisTicks: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+  },
+  yaxis: {
+    labels: {
+      show: true,
+      style: {
+        fontFamily: "Inter, sans-serif",
+        cssClass: 'text-md font-normal fill-body'
+      }
+    }
+  },
+  grid: {
+    show: true,
+    strokeDashArray: 4,
+    padding: {
+      left: 8,
+      right: 2,
+      top: -20
+    },
+  },
+  fill: {
+    opacity: 1,
+  }
+}
+  const chart5 = new ApexCharts(document.getElementById("bar-chart"), options);
+  chart5.render();
+
+</script>
+        </div>
+    </section>
+    <section class=" m-16">
+        <div>
+            <div class="text-2xl font-bold text-center pb-5">Recent Transactions</div>
+            <div>
+                <div class="flex justify-between bg-blue-50 border-2 border-blue-200 p-4 m-4 rounded-xl ">
+                    <div>
+                        <div >
+                            <div class="text-md md:text-lg font-semibold">Time- 14-04-26, 15:20</div>
+                            <div class="text-md md:text-xl font-semibold">Salary</div>
+                            <div class="">Income- Money got from work</div>
+                        </div>
+                    </div>
+                    <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$67,676</div>
+                </div>
+                <div class="flex justify-between bg-blue-50 border-2 border-blue-200 p-4 m-4 rounded-xl ">
+                    <div>
+                        <div >
+                            <div class="text-md md:text-lg font-semibold">Time- 14-04-26, 15:20</div>
+                            <div class="text-md md:text-xl font-semibold">Salary</div>
+                            <div class="">Income- Money got from work</div>
+                        </div>
+                    </div>
+                    <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$67,676</div>
+                </div>
+                <div class="flex justify-between bg-blue-50 border-2 border-blue-200 p-4 m-4 rounded-xl ">
+                    <div>
+                        <div >
+                            <div class="text-md md:text-lg font-semibold">Time- 14-04-26, 15:20</div>
+                            <div class="text-md md:text-xl font-semibold">Salary</div>
+                            <div class="">Income- Money got from work</div>
+                        </div>
+                    </div>
+                    <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$67,676</div>
+                </div>
+                <div class="flex justify-between bg-blue-50 border-2 border-blue-200 p-4 m-4 rounded-xl ">
+                    <div>
+                        <div >
+                            <div class="text-md md:text-lg font-semibold">Time- 14-04-26, 15:20</div>
+                            <div class="text-md md:text-xl font-semibold">Salary</div>
+                            <div class="">Income- Money got from work</div>
+                        </div>
+                    </div>
+                    <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$67,676</div>
+                </div>
+                <div class="flex justify-between bg-blue-50 border-2 border-blue-200 p-4 m-4 rounded-xl ">
+                    <div>
+                        <div >
+                            <div class="text-md md:text-lg font-semibold">Time- 14-04-26, 15:20</div>
+                            <div class="text-md md:text-xl font-semibold">Salary</div>
+                            <div class="">Income- Money got from work</div>
+                        </div>
+                    </div>
+                    <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$67,676</div>
+                </div>
+                <div class="flex justify-between bg-blue-50 border-2 border-blue-200 p-4 m-4 rounded-xl ">
+                    <div>
+                        <div >
+                            <div class="text-md md:text-lg font-semibold">Time- 14-04-26, 15:20</div>
+                            <div class="text-md md:text-xl font-semibold">Salary</div>
+                            <div class="">Income- Money got from work</div>
+                        </div>
+                    </div>
+                    <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$67,676</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+</html>
