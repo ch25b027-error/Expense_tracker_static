@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>ExpenseTracker</title>
 </head>
-<body class="bg-orange-0 ">
+<body class="overflow-x-hidden ">
     <header class="bg-purple-400 flex items-center justify-between sticky top-0 shadow-lg z-50 ">
         <div class="flex items-center gap-1">
             <a class="bg-blue-200 mx-3 my-2
@@ -384,67 +384,67 @@ const options = {
 </script>
         </div>
     </section>
-    <section class=" m-16">
-        <div>
-            <div class="flex justify-between px-4">
+    <section class="w-screen grid justify-items-center my-16">
+        <div class="w-[100%]">
+            <div class="flex flex-row w-[85%] mx-auto items-between justify-between px-4">
             <div class="text-2xl font-bold text-center pb-5">Recent Transactions</div>
             <div class="text-blue-500 cursor-pointer hover:text-blue-700 block text-lg font-semibold lg:hidden">See all</div>
             </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2">  
-                <div class="flex shadow-lg cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
+        <div class="grid grid-cols-1 lg:grid-cols-2 justify-items-center">  
+                <div class="flex shadow-lg w-[90%] md:w-[85%]  cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
                     <div>
                         <div >
-                            <div class="text-md font-semibold">14-04-26, 1:20</div>
+                            <div class="text-sm md:text-md font-semibold">14-04-26, 1:20</div>
                             <div class="text-lg md:text-xl font-semibold">Food</div>
                             <div class="hidden md:block ">Expense- Money spent on late night snacks</div>
                         </div>
                     </div>
                     <div class="text-xl md:text-2xl font-semibold text-red-500 ">-$676</div>
                 </div>
-                <div class="flex shadow-lg cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
+                <div class="flex shadow-lg w-[90%] md:w-[85%] cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
                     <div>
                         <div >
-                            <div class="text-md font-semibold">14-04-26, 15:20</div>
+                            <div class="text-sm md:text-md font-semibold">14-04-26, 15:20</div>
                             <div class="text-lg md:text-xl font-semibold">Salary</div>
                             <div class="hidden md:block">Income- Money got from work</div>
                         </div>
                     </div>
                     <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$67,676</div>
                 </div>
-                <div class="flex shadow-lg cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
+                <div class="flex shadow-lg w-[90%] md:w-[85%] cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
                     <div>
                         <div >
-                            <div class="text-md font-semibold">13-04-26, 3:20</div>
+                            <div class="text-sm md:text-md font-semibold">13-04-26, 3:20</div>
                             <div class="text-lg md:text-xl font-semibold">Clothes</div>
                             <div class="hidden md:block">Expense- Spent money on buying blazers</div>
                         </div>
                     </div>
                     <div class="text-xl md:text-2xl font-semibold text-red-500 ">-$1,676</div>
                 </div>
-                <div class="flex shadow-lg cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
+                <div class="flex shadow-lg w-[90%] md:w-[85%] cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
                     <div>
                         <div >
-                            <div class="text-md font-semibold">12-04-26, 10:20</div>
+                            <div class="text-sm md:text-md font-semibold">12-04-26, 10:20</div>
                             <div class="text-lg md:text-xl font-semibold">Food</div>
                             <div class="hidden md:block">Expense- Spent money in food court</div>
                         </div>
                     </div>
                     <div class="text-xl md:text-2xl font-semibold text-red-500 ">-$976</div>
                 </div>
-                <div class="flex shadow-lg cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
+                <div class="flex shadow-lg w-[90%] md:w-[85%] cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
                     <div>
                         <div >
-                            <div class="text-md font-semibold">12-04-26, 1:20</div>
+                            <div class="text-sm md:text-md font-semibold">12-04-26, 1:20</div>
                             <div class="text-lg md:text-xl font-semibold">Jhon</div>
                             <div class="hidden md:block">Income- Money got from friend Jhon</div>
                         </div>
                     </div>
                     <div class="text-xl md:text-2xl font-semibold text-green-500 ">+$8,676</div>
                 </div>
-                <div class="flex shadow-lg cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
+                <div class="flex shadow-lg w-[90%] md:w-[85%] cursor-pointer justify-between bg-blue-50 border-2 border-blue-200 p-3 m-4 rounded-xl ">
                     <div>
                         <div >
-                            <div class="text-md font-semibold">11-04-26, 18:20</div>
+                            <div class="text-sm md:text-md font-semibold">11-04-26, 18:20</div>
                             <div class="text-lg md:text-xl font-semibold">Rent</div>
                             <div class="hidden md:block">Expense- Spent money on rent</div>
                         </div>
