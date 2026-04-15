@@ -25,12 +25,12 @@
         <div class="flex md:hidden"><img src="./hamburger-menu-icon-svg-download-png-12787067.webp" class="h-11 w-11 cursor-pointer shadow-lg mx-4 my-2" /></div>
         </div>
     </header>
-    <section>
-        <div class="border-2 bg-gray-200 border-purple-400 rounded-2xl shadow-lg">
-            <div>Add Expense Here</div>
-            <div><input placeholder="Add amount of income..."></div>
-            <div>
-                <select class="border p-2 rounded">
+    <section class="flex flex-col h-[90vh] justify-center items-center">
+        <div class="border-2 w-4/5 md:w-3/5 lg:w-2/5 bg-blue-100 flex flex-col m-6 p-10 gap-4 justify-center items-center border-purple-400 rounded-2xl shadow-lg">
+            <div class="md:text-2xl font-semibold sm:text-xl">Add Expense Here</div>
+            <div class="w-full"><input class="p-3 w-full rounded-lg" placeholder="Add amount of income..."></div>
+            <div class="w-full">
+                <select class="border p-3 w-full rounded-lg ">
                 <option>Health-care</option>
                 <option>Food</option>
                 <option>Rent</option>
@@ -38,11 +38,14 @@
                 <option>Investments</option>
                 </select>
             </div>
-            <div>
-                <input placeholder="Add description of the Income">
+            <div class="w-full">
+                <input class="p-3 w-full rounded-lg" placeholder="Add description of the Income">
             </div>
         </div>
-        <button class="flex justify-center items-center p-3 rounded-xl bg-purple-400 hover:bg-purple-600 text-gray-200 hover:text-gray-50 ">Submit</button>
+        <div class="flex flex-col md:flex-row justify-around items-center">
+        <button class="flex px-12 border-2 bg-purple-500 justify-center items-center p-3 rounded-xl hover:bg-purple-700 text-gray-100 hover:text-white">Submit</button>
+        <a href="./index.html" class="flex px-6 border-2 bg-purple-500 cursor-pointer justify-center items-center p-3 rounded-xl hover:bg-purple-700 text-gray-100 hover:text-white">Back to home</a>
+        </div>
     </section>
 </body>
 </html>
